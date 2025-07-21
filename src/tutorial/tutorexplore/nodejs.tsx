@@ -1,5 +1,5 @@
 import { FaRegFileAlt } from "react-icons/fa";
-import Nodejs from "../../assets/nodeJS.png";
+import Nodejs from "../../assets/nodejs.png";
 
 const lessons = [
     "Tutorial NodeJS #01: Pengenalan Dasar Nodejs untuk Pemula",
