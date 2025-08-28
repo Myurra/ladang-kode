@@ -23,19 +23,23 @@ export function Postingan() {
             <div
               key={index}
               className="bg-[#1e293b] rounded-xl p-4 border border-transparent 
-                         hover:border-gray-400 hover:shadow-xl hover:scale-105 
-                         active:scale-95 transition-transform duration-300 ease-in-out 
-                         cursor-pointer"
+             hover:border-gray-400 hover:shadow-xl hover:scale-105 
+             active:scale-95 transition-transform duration-300 ease-in-out 
+             cursor-pointer flex flex-col h-full"
             >
               {post.image && post.image.length > 0 && (
                 <img
                   src={post.image[0]}
                   alt={post.title}
-                  className="w-full h-40 object-contain rounded mb-4"
+                  className="w-full h-40 object-cover rounded mb-4"
                 />
               )}
-              <h4 className="font-bold text-white text-base mb-2">{post.title}</h4>
-              <p className="text-sm text-gray-300">{post.desc}</p>
+
+              <div className="flex flex-col flex-1">
+                <h4 className="font-bold text-white text-base mb-2">{post.title}</h4>
+                <p className="text-sm text-gray-300 mb-2 flex-1">{post.desc}</p>
+                {/* Tombol atau link kalau ada bisa ditaruh di sini */}
+              </div>
             </div>
           ))}
         </div>
@@ -57,8 +61,8 @@ export function Postingan() {
               <button
                 key={num}
                 className={`w-8 h-8 rounded-full text-sm font-semibold transition-transform duration-150 ease-in-out active:scale-95 ${num === 1
-                    ? "bg-teal-500 text-white"
-                    : "bg-gray-700 text-white hover:bg-teal-500"
+                  ? "bg-teal-500 text-white"
+                  : "bg-gray-700 text-white hover:bg-teal-500"
                   }`}
               >
                 {num}
@@ -66,17 +70,17 @@ export function Postingan() {
             )
           )}
 
-        {/* Panah satu > */}
-        <button className="w-8 h-8 flex items-center justify-center text-white hover:bg-teal-500 rounded-full transition-transform duration-150 ease-in-out active:scale-95">
-          <FaChevronRight />
-        </button>
+          {/* Panah satu > */}
+          <button className="w-8 h-8 flex items-center justify-center text-white hover:bg-teal-500 rounded-full transition-transform duration-150 ease-in-out active:scale-95">
+            <FaChevronRight />
+          </button>
 
-        {/* Panah dua >> */}
-        <button className="w-8 h-8 flex items-center justify-center text-white hover:bg-teal-500 rounded-full transition-transform duration-150 ease-in-out active:scale-95">
-          <FaAnglesRight />
-        </button>
+          {/* Panah dua >> */}
+          <button className="w-8 h-8 flex items-center justify-center text-white hover:bg-teal-500 rounded-full transition-transform duration-150 ease-in-out active:scale-95">
+            <FaAnglesRight />
+          </button>
+        </div>
       </div>
-    </div>
     </div >
   );
 }

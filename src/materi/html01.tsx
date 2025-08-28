@@ -1,37 +1,5 @@
 import { useEffect } from "react";
-
-const artikelTerbaru = [
-  {
-    title: "Tutorial Laravel 11 untuk Pemula: Langsung Bisa bikin CRUD!",
-    date: "18 Aug 2024",
-    time: "baca 22 menit",
-    icon: "/icons/laravel.png",
-  },
-  {
-    title: "Tutorial Membuat Sistem Notifikasi dengan Redis Pub/Sub",
-    date: "13 Aug 2024",
-    time: "baca 6 menit",
-    icon: "/icons/golang.png",
-  },
-  {
-    title: "Belajar C++ #13: Mengenal Tipe Data Union",
-    date: "03 May 2024",
-    time: "baca 5 menit",
-    icon: "/icons/cpp.png",
-  },
-  {
-    title: "Belajar C++ #12: Mengenal Tipe Data Struct",
-    date: "01 May 2024",
-    time: "baca 8 menit",
-    icon: "/icons/cpp.png",
-  },
-  {
-    title: "Belajar C++ #11: Tipe Data Enum di C++",
-    date: "28 Apr 2024",
-    time: "baca 6 menit",
-    icon: "/icons/cpp.png",
-  },
-];
+import { artikelTerbaru } from "./importmateri/materi01";
 
 export default function Html01() {
   useEffect(() => {
@@ -45,7 +13,7 @@ export default function Html01() {
         {/* Konten Utama */}
         <div className="lg:col-span-2 bg-[#1e293b] rounded-xl p-6 shadow-md h-[720px] flex flex-col">
           <div className="mb-4">
-            <h1 className="text-3xl font-bold leading-snug mt-2 ">
+            <h1 className="text-3xl font-bold leading-snug mt-2">
               Belajar HTML dari Nol: <br /> Pengenalan Dasar HTML untuk Pemula
             </h1>
           </div>
@@ -72,7 +40,7 @@ export default function Html01() {
 
             <h2 className="text-xl font-bold">2. Struktur Dasar HTML</h2>
             <pre className="bg-[#0f172a] p-4 rounded text-sm text-green-400 overflow-x-auto">
-              {`<!DOCTYPE html>
+{`<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -152,7 +120,13 @@ export default function Html01() {
                       {item.date} • {item.time}
                     </p>
                   </div>
-                  <img src={item.icon} alt="icon" className="w-10 h-10 object-contain" />
+                  <div className="w-10 aspect-square rounded overflow-hidden">
+                    <img
+                      src={Array.isArray(item.icon) ? item.icon[0] : item.icon}
+                      alt="icon"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

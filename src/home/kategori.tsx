@@ -12,7 +12,7 @@ export function Kategori() {
         <h2 className="text-3xl text-white font-bold mb-2 md:text-start text-center">Mau belajar apa hari ini?</h2>
         <p className="text-lg text-gray-400 mb-4 md:text-start text-center">Temukan tutorial berdasarkan minatmu.</p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 items-stretch">
           {/* Kategori 1 */}
           <Link to="/kategori/pemrograman" className="block">
             <div className="bg-[#1e293b] rounded-xl p-6 hover:shadow-lg transition transform hover:scale-[1.02] active:scale-95 cursor-pointer">
@@ -49,7 +49,7 @@ export function Kategori() {
               </div>
               <h4 className="text-white font-bold text-lg mb-2">Kategori Lainnya</h4>
               <p className="text-gray-300 text-sm">
-                Mobile programming, Game programming, IoT, Blockchain, dan banyak lagi.
+                Mobile programming, Game programming, IoT, Blockchain, Jaringan, Database, dan juga banyak lagi.
               </p>
               <FaChevronRight className="mt-4 text-teal-500" />
             </div>
